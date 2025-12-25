@@ -2,106 +2,149 @@
 <html lang="sr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>O nama - PlastikaPro</title>
-    <style>
-        body { font-family: Arial; background-color: #f0f0f0; margin: 0; }
-        header, footer { background-color: #004080; color: white; text-align: center; padding: 15px; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; }
-        div { background: white; margin: 20px auto; padding: 20px; width: 80%; border-radius: 10px; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { border: 1px solid #333; padding: 10px; text-align: center; }
-        th { background-color: #004080; color: white; }
-        .proizvodi {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
 
-.proizvod img {
-    width: 200px;   /* širina slike */
-    height: auto;   /* visina se automatski prilagođava */
-    border-radius: 10px;
-    border: 1px solid #ccc;
-}
-
-.proizvod {
-    text-align: center;
-}
-
-    </style>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+        footer {
+            background-color: #004080;
+            color: white;
+        }
+        img {
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-    <h1>O nama</h1>
-    <nav>
-        <a href="index.html">Naslovna</a>
-        <a href="onama.html">O nama</a>
-        <a href="kontakt.html">Kontakt</a>
-    </nav>
-</header>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#004080;">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">PlastikaPro</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#meni">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="meni">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Naslovna</a></li>
+                <li class="nav-item"><a class="nav-link active" href="onama.html">O nama</a></li>
+                <li class="nav-item"><a class="nav-link" href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-<div>
-    <h2>Ko smo mi</h2>
-    <p>Naša fabrika osnovana je 2005. godine i bavi se proizvodnjom kvalitetnih plastičnih proizvoda za domaće i inostrano tržište.</p>
+<!-- NASLOV -->
+<div class="container my-5">
+    <div class="card p-4 shadow-sm text-center">
+        <h1>O nama</h1>
+        <p>Saznajte više o našoj kompaniji</p>
+    </div>
 </div>
-<div>
-    <h2>O nama</h2>
-    <p>Naša fabrika se bavi proizvodnjom plastičnih proizvoda već 20 godina. Pružamo kvalitetne proizvode za domaće i inostrano tržište.</p>
-    <p>Specijalizovani smo za proizvodnju širokog spektra proizvoda, od industrijskih cevi i čepova, do plastičnih flaša i ambalaže. Svaki proizvod prolazi kroz strogu kontrolu kvaliteta kako bismo osigurali da zadovoljava standarde naših kupaca.</p>
-    <p>Naš tim čini više od 50 stručnjaka iz oblasti proizvodnje, inženjeringa i dizajna. Kontinuirano ulažemo u edukaciju i inovacije kako bismo unapredili proces proizvodnje i ostali lideri u industriji.</p>
-    <p>Pored kvaliteta proizvoda, posvećeni smo i zaštiti životne sredine kroz korišćenje recikliranih materijala i ekološki prihvatljivih tehnologija u proizvodnji.</p>
+
+<!-- KO SMO MI -->
+<div class="container mb-4">
+    <div class="card p-4 shadow-sm">
+        <h2>Ko smo mi</h2>
+        <p>
+            Naša fabrika osnovana je 2005. godine i bavi se proizvodnjom
+            kvalitetnih plastičnih proizvoda za domaće i inostrano tržište.
+        </p>
+    </div>
 </div>
-<div>
-    <h3>Cenovnik i usluge</h3>
-    <table>
-        <tr>
-            <th>Proizvod</th>
-            <th>Opis</th>
-            <th>Cena (RSD)</th>
-        </tr>
-        <tr>
-            <td>Plastična flaša 1L</td>
-            <td>Transparentna, reciklabilna</td>
-            <td>25</td>
-        </tr>
-        <tr>
-            <td>Plastični čep</td>
-            <td>Standardni, više boja</td>
-            <td>5</td>
-        </tr>
-        <tr>
-            <td>Industrijska cev</td>
-            <td>Otporna na visoke temperature</td>
-            <td>1500</td>
-        </tr>
-    </table>
-    <div>
-    <h3>Galerija proizvoda</h3>
-    <div class="proizvodi">
-        <div class="proizvod">
-            <img src="flasa1l.jpg" alt="Plastična flaša 1L">
-            <p>Plastična flaša 1L</p>
-        </div>
-        <div class="proizvod">
-            <img src="cep.jpg" alt="Plastični čep">
-            <p>Plastični čep</p>
-        </div>
-        <div class="proizvod">
-            <img src="cev.jpg" alt="Industrijska cev">
-            <p>Industrijska cev</p>
+
+<!-- DETALJI -->
+<div class="container mb-4">
+    <div class="card p-4 shadow-sm">
+        <h2>Naša priča</h2>
+        <p>
+            Već više od 20 godina pružamo kvalitetne proizvode u industriji plastike.
+            Specijalizovani smo za proizvodnju industrijskih cevi, čepova,
+            plastičnih flaša i ambalaže.
+        </p>
+        <p>
+            Naš tim čini više od 50 stručnjaka koji konstantno rade na
+            unapređenju proizvodnje i inovacijama.
+        </p>
+        <p>
+            Posebnu pažnju posvećujemo zaštiti životne sredine korišćenjem
+            recikliranih materijala i ekološki prihvatljivih tehnologija.
+        </p>
+    </div>
+</div>
+
+<!-- TABELA -->
+<div class="container mb-5">
+    <div class="card p-4 shadow-sm">
+        <h3>Cenovnik i usluge</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered text-center align-middle">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Proizvod</th>
+                        <th>Opis</th>
+                        <th>Cena (RSD)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Plastična flaša 1L</td>
+                        <td>Transparentna, reciklabilna</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>Plastični čep</td>
+                        <td>Standardni, više boja</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>Industrijska cev</td>
+                        <td>Otporna na visoke temperature</td>
+                        <td>1500</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
+
+<!-- GALERIJA -->
+<div class="container mb-5">
+    <div class="card p-4 shadow-sm">
+        <h3 class="mb-4">Galerija proizvoda</h3>
+        <div class="row text-center">
+            <div class="col-md-4 mb-3">
+                <img src="flasa1l.jpg" class="img-fluid mb-2" alt="Plastična flaša 1L">
+                <p>Plastična flaša 1L</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <img src="cep.jpg" class="img-fluid mb-2" alt="Plastični čep">
+                <p>Plastični čep</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <img src="cev.jpg" class="img-fluid mb-2" alt="Industrijska cev">
+                <p>Industrijska cev</p>
+            </div>
+        </div>
+    </div>
 </div>
 
-<footer>
-    <p>&copy; 2025 PlastikaPro</p>
+<!-- FOOTER -->
+<footer class="text-center py-3">
+    <p class="mb-0">&copy; 2025 PlastikaPro</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
 
