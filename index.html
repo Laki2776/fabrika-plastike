@@ -2,102 +2,143 @@
 <html lang="sr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PlastikaPro - Fabrika plastičnih proizvoda</title>
-    <style>
-        body { font-family: Arial; background-color: #f5f5f5; margin: 0; }
-        header, footer { background-color: #004080; color: white; text-align: center; padding: 15px; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; }
-        div { background: white; margin: 20px auto; padding: 20px; width: 80%; border-radius: 10px; }
-        img { width: 45%; margin: 10px; border-radius: 10px; }
-        img {
-    width: 200px;   /* širina slike */
-    height: auto;   /* visina se automatski prilagođava */
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    </style>
+
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #004080;
+        }
+        footer {
+            background-color: #004080;
+            color: white;
+        }
+        img {
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-    <h1>PlastikaPro</h1>
-    <nav>
-    <a class="nav-link text-white" href="index.html">Naslovna</a>
-    <a class="nav-link text-white" href="onama.html">O nama</a>
-    <a class="nav-link text-white" href="kontakt.html">Kontakt</a>
-    <a class="nav-link text-white" href="https://www.google.com/search?q=plastika wiki" target="_blank">
-        Više o plastici
-    </a>
+<!-- HEADER / NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#004080;">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">PlastikaPro</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#meni">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="meni">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Naslovna</a></li>
+                <li class="nav-item"><a class="nav-link" href="onama.html">O nama</a></li>
+                <li class="nav-item"><a class="nav-link" href="kontakt.html">Kontakt</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="https://www.google.com/search?q=plastika wiki">
+                        Više o plastici
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
-</header>
 
-<div>
-    <h2>Dobrodošli u našu fabriku</h2>
-    <p>PlastikaPro je moderna fabrika koja se bavi izradom i preradom plastičnih proizvoda visoke izdržljivosti.</p>
-</div>
-    <div>
-<!-- Naša misija -->
-<section>
-    <h2>Naša misija</h2>
-    <p>Naša fabrika se posvećuje pružanju visokokvalitetnih plastičnih proizvoda koji zadovoljavaju potrebe naših kupaca. Kombinovanjem stručnosti i inovacija sa najsavremenijom tehnologijom, pružamo rešenja koja su u skladu sa najvišim standardima kvaliteta. Naša misija je da doprinosimo održivom razvoju kroz efikasnu proizvodnju i odgovorno upravljanje resursima.</p>
-</section>
-
-<!-- Naše usluge -->
-<section>
-    <h2>Naše usluge</h2>
-    <p>Pružamo širok spektar usluga u oblasti proizvodnje plastičnih proizvoda, uključujući:</p>
-    <ul>
-        <li><strong>Injekciono oblikovanje plastike</strong>: Proizvodnja preciznih plastičnih delova za različite industrije.</li>
-        <li><strong>Prilagođeni alati i kalupi</strong>: Dizajn i izrada specijalizovanih alata za specifične potrebe.</li>
-        <li><strong>Pakovanje i montaža</strong>: Kompletna usluga od proizvodnje do gotovog proizvoda.</li>
-    </ul>
-</section>
-
-<!-- Održivost i inovacije -->
-<section>
-    <h2>Održivost i inovacije</h2>
-    <p>Posvećeni smo razvoju održivih rešenja u proizvodnji plastičnih proizvoda. Kroz kontinuirano istraživanje i primenu novih tehnologija, radimo na smanjenju uticaja na životnu sredinu i unapređenju efikasnosti proizvodnje.</p>
-</section>
-
-<!-- Naša istorija -->
-<section>
-    <h2>Naša istorija</h2>
-    <p>Naša fabrika je osnovana 2005. godine sa ciljem da postane lider u proizvodnji plastičnih proizvoda. Kroz godine, proširivali smo našu ponudu i unapređivali tehnologiju kako bismo zadovoljili rastuće zahteve tržišta.</p>
-</section>
-
-<!-- Naš tim -->
-<section>
-    <h2>Naš tim</h2>
-    <p>Naš tim čine stručnjaci sa bogatim iskustvom u industriji plastike. Zajedno radimo na ostvarivanju zajedničkog cilja – pružanju visokokvalitetnih proizvoda i usluga našim kupcima.</p>
-</section>
-</div>
-<div>
-    <h3>Naši proizvodi</h3>
-    <ul>
-        <li>Ambalaža (flaše, čepovi, kutije)</li>
-        <li>Industrijske komponente</li>
-        <li>Plastične cevi i fitinzi</li>
-    </ul>
-    <img src="download.jpg" alt="Mašina za plastiku">
-    <img src="plastika.jpg" alt="Naši proizvodi">
+<!-- HERO -->
+<div class="container my-5">
+    <div class="card p-4 shadow-sm">
+        <h2>Dobrodošli u našu fabriku</h2>
+        <p>
+            PlastikaPro je moderna fabrika koja se bavi izradom i preradom
+            plastičnih proizvoda visoke izdržljivosti.
+        </p>
+    </div>
 </div>
 
-<div>
-    <h3>Saznaj vise o plastici</h3>
-    <a href= "https://youtu.be/-q0OKVWDTvk?si=tzA_ipRNs5_ZtSth">Više o plastici</a> 
+<!-- SEKCIJE -->
+<div class="container">
+    <div class="card p-4 mb-4 shadow-sm">
+        <h2>Naša misija</h2>
+        <p>
+            Posvećeni smo pružanju visokokvalitetnih plastičnih proizvoda
+            kroz inovacije, savremenu tehnologiju i odgovorno upravljanje resursima.
+        </p>
+    </div>
+
+    <div class="card p-4 mb-4 shadow-sm">
+        <h2>Naše usluge</h2>
+        <ul>
+            <li><strong>Injekciono oblikovanje plastike</strong></li>
+            <li><strong>Prilagođeni alati i kalupi</strong></li>
+            <li><strong>Pakovanje i montaža</strong></li>
+        </ul>
+    </div>
+
+    <div class="card p-4 mb-4 shadow-sm">
+        <h2>Održivost i inovacije</h2>
+        <p>
+            Radimo na smanjenju uticaja na životnu sredinu
+            i unapređenju efikasnosti proizvodnje.
+        </p>
+    </div>
+
+    <div class="card p-4 mb-4 shadow-sm">
+        <h2>Naša istorija</h2>
+        <p>
+            Fabrika je osnovana 2005. godine i od tada
+            konstantno raste i unapređuje svoju proizvodnju.
+        </p>
+    </div>
+
+    <div class="card p-4 mb-4 shadow-sm">
+        <h2>Naš tim</h2>
+        <p>
+            Tim stručnjaka sa dugogodišnjim iskustvom u industriji plastike.
+        </p>
+    </div>
 </div>
 
+<!-- PROIZVODI -->
+<div class="container my-5">
+    <h3 class="mb-3">Naši proizvodi</h3>
 
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="list-group mb-3">
+                <li class="list-group-item">Ambalaža</li>
+                <li class="list-group-item">Industrijske komponente</li>
+                <li class="list-group-item">Plastične cevi i fitinzi</li>
+            </ul>
+        </div>
 
-<footer>
-    <p>&copy; 2025 PlastikaPro. Sva prava zadržana.</p>
+        <div class="col-md-8 text-center">
+            <img src="download.jpg" class="img-fluid m-2" alt="Mašina za plastiku">
+            <img src="plastika.jpg" class="img-fluid m-2" alt="Naši proizvodi">
+        </div>
+    </div>
+</div>
+
+<!-- VIDEO -->
+<div class="container text-center mb-5">
+    <a class="btn btn-primary"
+       target="_blank"
+       href="https://youtu.be/-q0OKVWDTvk">
+        Saznaj više o plastici
+    </a>
+</div>
+
+<!-- FOOTER -->
+<footer class="text-center py-3">
+    <p class="mb-0">&copy; 2025 PlastikaPro. Sva prava zadržana.</p>
 </footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
 
 
 
