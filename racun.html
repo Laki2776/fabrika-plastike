@@ -2,43 +2,40 @@
 <html lang="sr">
 <head>
     <meta charset="UTF-8">
-    <title>Vaš Račun - Fabrika Plastike</title>
+    <title>Račun - Fabrika Plastike</title>
     <style>
-        body { font-family: sans-serif; padding: 40px; line-height: 1.6; }
-        .racun-box { border: 2px solid #333; padding: 20px; max-width: 500px; background: #fffdf0; }
-        h2 { border-bottom: 2px solid #333; }
-        .ukupno { font-size: 20px; font-weight: bold; color: red; margin-top: 20px; }
+        body { font-family: Arial, sans-serif; display: flex; justify-content: center; padding-top: 50px; background: #f4f4f4; }
+        .paper { background: white; padding: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 400px; border-top: 5px solid #28a745; }
+        .item { display: flex; justify-content: space-between; border-bottom: 1px dashed #ccc; padding: 10px 0; }
+        .total { font-size: 22px; font-weight: bold; margin-top: 20px; text-align: right; color: #d9534f; }
     </style>
 </head>
 <body>
-
-    <div class="racun-box">
-        <h2>FABRIKA PLASTIKE - RAČUN</h2>
-        <div id="stavke-racuna"></div>
-        <div class="ukupno" id="finalna-cena"></div>
-        <br>
-        <button onclick="window.location.href='index.html'">Nazad na prodavnicu</button>
+    <div class="paper">
+        <h2 style="text-align:center;">FABRIKA PLASTIKE</h2>
+        <p style="text-align:center; font-size: 12px;">Hvala na poverenju!</p>
+        <hr>
+        <div id="lista"></div>
+        <div id="total" class="total"></div>
+        <button onclick="window.location.href='index.html'" style="width:100%; margin-top: 20px; padding: 10px; cursor:pointer;">Nazad</button>
     </div>
 
     <script>
-        const podaci = JSON.parse(localStorage.getItem('mojaKorpa'));
-        const kontejner = document.getElementById('stavke-racuna');
-        const finalniPrikaz = document.getElementById('finalna-cena');
-        
-        if (podaci && podaci.length > 0) {
-            let html = "<ul>";
-            let suma = 0;
+        const podaci = JSON.parse(localStorage.getItem('finalni_racun'));
+        const listaDiv = document.getElementById('lista');
+        let suma = 0;
 
-            podaci.forEach(s => {
-                html += `<li>${s.tip} (x${s.kolicina}) - ${s.ukupno} RSD</li>`;
-                suma += s.ukupno;
+        if (podaci) {
+            Object.values(podaci).forEach(stavka => {
+                listaDiv.innerHTML += `
+                    <div class="item">
+                        <span>${stavka.tip} x${stavka.kolicina}</span>
+                        <span>${stavka.ukupno} RSD</span>
+                    </div>
+                `;
+                suma += stavka.ukupno;
             });
-
-            html += "</ul>";
-            kontejner.innerHTML = html;
-            finalniPrikaz.innerHTML = "UKUPNO ZA UPLATU: " + suma + " RSD";
-        } else {
-            kontejner.innerHTML = "<p>Korpa je prazna.</p>";
+            document.getElementById('total').innerText = "UKUPNO: " + suma + " RSD";
         }
     </script>
 </body>
