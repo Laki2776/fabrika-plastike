@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'saksija-20', tip: "Saksija", dimenzija: "Ø 20 cm", cena: 150 },
         { id: 'saksija-30', tip: "Saksija", dimenzija: "Ø 30 cm", cena: 250 },
         { id: 'kanta-20', tip: "Kanta", dimenzija: "20 L", cena: 550 },
-        { id: 'kanta-50', tip: "Kanta", dimenzija: "50 L", cena: 1200 }
+        { id: 'kanta-50', tip: "Kanta", dimenzija: "50 L", cena: 1200 },
+        { id: 'gajbica', tip: "gajbica", dimenzija: "40 cm x 20 cm", cena: 400 }
+        
     ];
 
     const tabela = document.getElementById('tabela-kontejner');
