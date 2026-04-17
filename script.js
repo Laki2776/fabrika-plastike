@@ -1,23 +1,48 @@
+// Podaci o proizvodima sa cenama
 const proizvodi = [
-    { tip: "Plastična gajba", boja: "Plava", dimenzije: "60x40x30 cm" },
-    { tip: "Kanta za otpatke", boja: "Crna", dimenzije: "50 litara" },
-    { tip: "Saksija za cveće", boja: "Terakota", dimenzije: "Ø 30 cm" }
+    { tip: "Saksija za cveće", dimenzija: "Ø 20 cm", boja: "Terakota", cena: "150 RSD" },
+    { tip: "Saksija za cveće", dimenzija: "Ø 30 cm", boja: "Terakota", cena: "250 RSD" },
+    { tip: "Saksija za cveće", dimenzija: "Ø 40 cm", boja: "Terakota", cena: "400 RSD" },
+    { tip: "Kanta za otpatke", dimenzija: "10 L", boja: "Crna", cena: "300 RSD" },
+    { tip: "Kanta za otpatke", dimenzija: "20 L", boja: "Crna", cena: "550 RSD" },
+    { tip: "Kanta za otpatke", dimenzija: "50 L", boja: "Crna", cena: "1200 RSD" },
+    { tip: "Gajba za voće", dimenzija: "Standard", boja: "Zelena", cena: "350 RSD" }
 ];
 
-const kontejner = document.getElementById('lista-proizvoda');
+const kontejner = document.getElementById('tabela-kontejner');
 
-function prikaziProizvode() {
-    let htmlSadrzaj = "";
+function napraviTabelu() {
+    let html = `
+        <table border="1" style="width:100%; border-collapse: collapse; text-align: left;">
+            <thead>
+                <tr style="background-color: #f2f2f2;">
+                    <th style="padding: 10px;">Proizvod</th>
+                    <th style="padding: 10px;">Dimenzija</th>
+                    <th style="padding: 10px;">Boja</th>
+                    <th style="padding: 10px;">Cena</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+
     proizvodi.forEach(proizvod => {
-        htmlSadrzaj += `
-            <div class="proizvod-kartica">
-                <h3>${proizvod.tip}</h3>
-                <p>Boja: ${proizvod.boja}</p>
-                <p>Dimenzije: ${proizvod.dimenzije}</p>
-            </div>
+        html += `
+            <tr>
+                <td style="padding: 10px;">${proizvod.tip}</td>
+                <td style="padding: 10px;">${proizvod.dimenzija}</td>
+                <td style="padding: 10px;">${proizvod.boja}</td>
+                <td style="padding: 10px;"><strong>${proizvod.cena}</strong></td>
+            </tr>
         `;
     });
-    kontejner.innerHTML = htmlSadrzaj;
+
+    html += `
+            </tbody>
+        </table>
+    `;
+
+    kontejner.innerHTML = html;
 }
 
-prikaziProizvode();
+// Pokreni funkciju
+napraviTabelu();
