@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     tabelaHtml += `</tbody></table>
-    <button onclick="zavrsi()" style="margin-top: 20px; padding: 15px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
+    <button onclick="zavrsi()" style="margin-top: 20px; padding: 15px; background: #0000FF; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
         SASTAVI RAČUN I PLATI
     </button>`;
 
