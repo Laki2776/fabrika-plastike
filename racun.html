@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <title>Vaš Račun - Fabrika Plastike</title>
+    <style>
+        body { font-family: sans-serif; padding: 40px; line-height: 1.6; }
+        .racun-box { border: 2px solid #333; padding: 20px; max-width: 500px; background: #fffdf0; }
+        h2 { border-bottom: 2px solid #333; }
+        .ukupno { font-size: 20px; font-weight: bold; color: red; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="racun-box">
+        <h2>FABRIKA PLASTIKE - RAČUN</h2>
+        <div id="stavke-racuna"></div>
+        <div class="ukupno" id="finalna-cena"></div>
+        <br>
+        <button onclick="window.location.href='index.html'">Nazad na prodavnicu</button>
+    </div>
+
+    <script>
+        const podaci = JSON.parse(localStorage.getItem('mojaKorpa'));
+        const kontejner = document.getElementById('stavke-racuna');
+        const finalniPrikaz = document.getElementById('finalna-cena');
+        
+        if (podaci && podaci.length > 0) {
+            let html = "<ul>";
+            let suma = 0;
+
+            podaci.forEach(s => {
+                html += `<li>${s.tip} (x${s.kolicina}) - ${s.ukupno} RSD</li>`;
+                suma += s.ukupno;
+            });
+
+            html += "</ul>";
+            kontejner.innerHTML = html;
+            finalniPrikaz.innerHTML = "UKUPNO ZA UPLATU: " + suma + " RSD";
+        } else {
+            kontejner.innerHTML = "<p>Korpa je prazna.</p>";
+        }
+    </script>
+</body>
+</html>
